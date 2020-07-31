@@ -1,8 +1,5 @@
 // Enums are types which have a few definite values
 
-use std::io;
-
-#[derive(Debug)]
 enum Movement {
     UP,
     DOWN,
@@ -23,9 +20,9 @@ fn move_avatar(m: Movement) {
 fn get_input() -> String {
     use std::io::{stdin,stdout,Write};
     let mut s=String::new();
-    print!("Move direction: ");
-    stdout().flush();
-    stdin().read_line(&mut s);
+    // print!("Move direction: ");
+    stdout().flush().expect("Output Error!");
+    stdin().read_line(&mut s).expect("Input Error!");
     if let Some('\n')=s.chars().next_back() {
         s.pop();
     }
@@ -49,8 +46,7 @@ fn get_direction(dir: &str) -> Option<Movement> {
 pub fn run() {
     let mut input = String::from("");
     let dir : Movement = Movement::UP;
-    let up = String::from("up");
-    while true {
+    loop {
         input = get_input().to_lowercase();
         match get_direction(&input) {
             Some(o) => move_avatar(o),

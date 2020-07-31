@@ -1,15 +1,17 @@
-mod print;
-mod string;
-mod types;
-mod tuples;
-mod arrays;
-mod vectors;
-mod conditional;
-mod loops;
-mod functions;
-mod pointer_ref;
-mod structs;
-mod enums;
+// mod print;
+// mod string;
+// mod types;
+// mod tuples;
+// mod arrays;
+// mod vectors;
+// mod conditional;
+// mod loops;
+// mod functions;
+// mod pointer_ref;
+// mod structs;
+// mod enums;
+mod if_let;
+
 
 fn main() {
     // println!("----------Calling imported 'run' function----------",);
@@ -45,7 +47,10 @@ fn main() {
     // println!("----------Structs----------");
     // structs::run();
 
-    println!("----------Enums----------");
-    enums::run();
+    // println!("----------Enums----------");
+    // enums::run();
+
+    println!("----------If let----------");
+    if_let::run();
 
 }
